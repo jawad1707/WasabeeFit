@@ -1,0 +1,119 @@
+﻿{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WasabeeFit Register</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="getbootstrap.com/docs/4.5/examples/pricing/">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body style=" background-repeat: no-repeat; background-sizejs/respond.js"></script><![endif]-->
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+
+</head>
+
+<body style=" background-repeat: no-repeat; background-size: cover;">
+
+    <div class="header-social-box clearfix" style="padding: 10px; background-color: #1a1c20;">
+
+        <h3 style="margin-left: 10px; font-family: Castoro; font-size: 1.8rem;"><a href="http://127.0.0.1:8000/"><b>Home</b></a></h3>
+
+    </div>
+
+    
+
+
+
+
+    <div class="purchase-form">
+        <div class="sec-title centered" style="margin-top: 30px;">
+            <h2><span>REGISTRATION</span> FORM</h2>
+            <div class="text">Register your account <br> By Providing Given Information</div>
+        </div>
+
+        <!-- Default Form -->
+        <form method="post" action="register">
+            {% csrf_token %}
+            <div class="row clearfix" style="margin-left: 10%; margin-right:10%;">
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="password" name="password1" placeholder="Password" required>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input type="password" name="password2" placeholder="Confirm Password" required>
+                </div>
+
+                <div class="form-group col-lg-4 col-md-6 col-sm-12" style="margin-left: 40%;">
+                    <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">REGISTER</span></button>
+                </div>
+
+
+            </div>
+        </form>
+
+        <div class="header-social-box clearfix">
+
+            <h6 style="font-family: Castoro; font-size: 1.5rem; margin-left: 40%;"><a href="login"><u> Already a member? Login </u></a></h6>
+
+
+        </div>
+
+        <div>
+            {% for message in messages %}
+            <h3> {{message}} </h3>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

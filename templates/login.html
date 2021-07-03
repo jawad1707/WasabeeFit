@@ -1,0 +1,104 @@
+﻿{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WasabeeFit Login</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header-social-box clearfix" style="background-color: #1a1c20; padding: 10px;">
+
+        <h4 style="margin-left: 10px; font-family: Castoro; font-size: 1.8rem;"><a href="http://127.0.0.1:8000/"><b>Home</b></a></h4>
+
+
+    </div>
+
+
+
+
+
+        <!-- Preloder -->
+        <div id="preloder" class="preloader">
+            <div class="loader"></div>
+        </div>
+        <!-- ?nd Preloader -->
+
+        <div class="purchase-form" style="margin-top: 2%;">
+            <div class="sec-title centered">
+                <h2><span>LOGIN</span></h2>
+                <div class="text">Login with your credentials</div>
+            </div>
+
+            <!-- Default Form -->
+            <form method="post" action="login" style="margin-left: 25%; margin-right: 25%;">
+                {% csrf_token %}
+                <div class="row clearfix">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+
+
+                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                        <button class="theme-btn btn-style-one" type="submit" name="submit-form" style="margin-left: 40%;"><span class="txt">LOG IN</span></button>
+                    </div>
+
+
+                </div>
+            </form>
+
+            <div class="header-social-box clearfix">
+
+            <h6 style="margin-left: 40%; font-family: Castoro; font-size: 1.5rem;"><a href="register"><u> Not A Member Yet? Register </u></a></h6>
+
+
+            </div>
+
+            <div>
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+        <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+        <script src="{% static 'js/appear.js' %}"></script>
+        <script src="{% static 'js/owl.js' %}"></script>
+        <script src="{% static 'js/wow.js' %}"></script>
+        <script src="{% static 'js/jquery-ui.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

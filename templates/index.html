@@ -1,0 +1,1120 @@
+﻿{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WasabeeFit Home</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloder -->
+	<div id="preloder" class="preloader">
+		<div class="loader"></div>
+	</div>
+	<!-- Εnd Preloader -->
+ 	
+ 	<!-- Main Header-->
+    <header class="main-header header-style-one">
+    	
+		<!--Header-Upper-->
+        <div class="header-upper">
+        	<div class="outer-container">
+            	<div class="inner-container clearfix">
+                	
+					<!-- Logo Box -->
+                	<div class="logo-box">
+                    	<div class="logo"><a href=""><img src="{% static 'images/logo.svg' %}"</a></div>
+                    </div>
+                    
+					<!-- Logo -->
+					<div class="mobile-logo pull-left">
+						<a href="index.html" title=""><img src="{% static 'images/logo-small.svg' %}" alt="" title=""></a>
+					</div>
+					
+					<!-- Header Social Box -->
+					<div class="header-social-box clearfix">
+
+
+
+						{% if user.is_authenticated %}
+
+						<h4> Hello! {{user.first_name}} </h4>
+						<a href="accounts/logout">Logout</a>
+
+						<a href="store">Shop</a>
+						<a href="accounts/login">Blog</a>
+						<a href="timetable">Time Table</a>
+
+
+						{% else %}
+						<a href="store">Shop</a>
+						<a href="accounts/login">Blog</a>
+						<a href="timetable">Timetable</a>
+
+						<a href="accounts/register">Register</a>
+						<a href="accounts/login">Login</a>
+
+						{% endif %}
+
+					</div>
+					
+			
+					
+					<div class="nav-outer clearfix">
+						<!--Mobile Navigation Toggler-->
+						<div class="mobile-nav-toggler"><span class="icon"><img src="{% static 'images/icons/burger.svg' %}" alt="" /></span></div>
+						<!-- Main Menu -->
+						<nav class="main-menu navbar-expand-md">
+							<div class="navbar-header">
+								<!-- Toggle Button -->    	
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							
+							<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+								<ul class="navigation clearfix">
+									<!--<li> <a href="index.html">Home</a></li> -->
+									<li class="dropdown">
+
+
+									<li>
+										<a href="store">Shop</a>
+									</li>
+									<li>
+										<a href="#">Blog</a>
+									</li>
+									<li>
+										<a href="timetable">Timetable</a>
+									</li>
+
+
+									{% if user.is_authenticated %}
+									<li><a> Hello! {{user.first_name}} </a></li>
+									<li><a href="accounts/logout">Logout</a></li>
+
+									{% else %}
+									<li><a href="accounts/register">Register</a></li>
+									<li><a href="accounts/login">Login</a></li>
+
+									{% endif %}
+								</ul>
+							</div>
+						</nav>
+						
+					</div>
+                    
+                </div>
+				
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+		<!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="" title=""><img src="{% static '/images/logo-small.svg' %}" alt="" title=""></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav><!-- Main Menu End-->
+					
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+    
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="{% static 'images/sidebar-logo.svg' %}" alt="" title=""></a></div>
+                <div class="menu-outer">
+				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            </nav>
+			
+        </div>
+		<!-- End Mobile Menu -->
+	
+    </header>
+    <!-- End Main Header -->
+	
+	
+	
+	<!-- Banner Section -->
+    <section class="banner-section">
+		<div class="main-slider-carousel owl-carousel owl-theme">
+            
+			<div class="slide">
+				<div class="image-layer" style="background-image:url(static/images/main-slider/image-1.jpg)"></div>
+				<div class="auto-container">
+					<!-- Content Boxed -->
+					<div class="content-boxed">
+						<div class="inner-boxed">
+							<h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
+							<div class="text">Wasabee Fit – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
+							<div class="btns-box">
+								<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="slide">
+				<div class="image-layer" style="background-image:url(static/images/main-slider/image-3.jpg)"></div>
+				<div class="auto-container">
+					<!-- Content Boxed -->
+					<div class="content-boxed">
+						<div class="inner-boxed">
+							<h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
+							<div class="text">Wasabee Fit – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
+							<div class="btns-box">
+								<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="slide">
+				<div class="image-layer" style="background-image:url(static/images/main-slider/image-4.jpg)"></div>
+				<div class="auto-container">
+					<!-- Content Boxed -->
+					<div class="content-boxed">
+						<div class="inner-boxed">
+							<h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
+							<div class="text">Wasabee Fit – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
+							<div class="btns-box">
+								<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="slide">
+				<div class="image-layer" style="background-image:url(static/images/main-slider/image-5.jpg)"></div>
+				<div class="auto-container">
+					<!-- Content Boxed -->
+					<div class="content-boxed">
+						<div class="inner-boxed">
+							<h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
+							<div class="text">Wasabee Fit – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
+							<div class="btns-box">
+								<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		
+		</div>
+		
+		<!--Scroll Dwwn Btn-->
+        <div class="mouse-btn-down scroll-to-target" data-target=".testimonial-section">
+			<span class="icon"><img src="{% static 'images/icons/scroll.png' %}" alt="" /></span>
+		</div>
+		
+	</section>
+	<!-- End Banner Section -->
+	
+	<!-- Testimonial Section -->
+	<section class="testimonial-section">
+		<div class="auto-container">
+			<div class="inner-container">
+				<span class="quote-left flaticon-quote-3"></span>
+				<span class="quote-right flaticon-quote-4"></span>
+					
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="text">Want to be healthy and have a perfect body? Wasabee Fit is the right decision for you! It will create your personal training program and balance your diet so you could get the <br> shape of your dream shortly!</div>
+					</div>
+				</div>
+					
+			</div>
+		</div>
+	</section>
+	<!-- End Testimonial Section -->
+	
+	
+	<!-- We Are Section -->
+	<section class="we-are-section">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>WHO</span> We Are</h2>
+				<div class="text">We are Wasabee Fit and we are here to make your crave for fitness worth it by providing features and services that will guide you to right direction and make your life easy. <br> We value your busy work schedule and other aspects of life, therefore create an account on Wasabee Fit and track all your progress, visit our up-to dated shop section and pay your fees at the same time.</div>
+			</div>
+			
+			<!-- Button Box -->
+			<!-- <div class="button-box text-center">
+				<div class="heme-btn btn-style-one purchase-box-btn"><span class="txt">FREE CONSULTATION</span></div>
+			</div>	-->
+			
+		</div>
+	</section>
+	<!-- End We Are Section -->
+	
+	<!-- Gallery Section -->
+	<section class="gallery-section">
+		<div class="outer-container">
+			<div class="row clearfix">
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/1.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/1.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/1.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/2.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/2.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/2.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/3.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/3.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/3.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/4.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/4.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/4.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/5.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/5.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/5.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/6.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/6.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/6.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/7.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/7.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/7.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/8.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/8.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/8.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/9.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/9.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/9.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/10.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/10.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/10.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/11.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/11.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/11.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery Block -->
+				<div class="gallery-block">
+					<div class="inner-box">
+						<div class="image">
+							<img src="{% static 'images/gallery/12.jpg' %}" alt="" />
+							<a class="overlay-link" href="{% static 'images/gallery/12.jpg' %}" data-fancybox="images" data-caption=""></a>
+							<!-- Overlay Box -->
+							<div class="overlay-box">
+								<div class="overlay-inner">
+									<div class="content">
+										<a class="plus" href="{% static 'images/gallery/12.jpg' %}" data-fancybox="images" data-caption=""></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Gallery Section -->
+	
+	<!-- Counter Section -->
+	<section class="counter-section">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>why</span> choose us</h2>
+				<div class="text">Wasabee Fit has a bright vision to maximize the efficiency of a user and make it easier than ever to reach one's goal for a perfect health.<br> Hundreds of our amazing clients already reached their goals. Hurry and join us! </div>
+			</div>
+			
+			<!-- Fact Counter -->
+			<div class="fact-counter">
+				<div class="row clearfix">
+
+					<!-- Column -->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="3000" data-stop="12">0</span>
+								</div>
+								<div class="counter-title">Training Programs</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Column -->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box alternate">
+									<span class="count-text" data-speed="5000" data-stop="14">0</span>
+								</div>
+								<div class="counter-title">Years Experience</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Column -->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="5000" data-stop="357">0</span>
+								</div>
+								<div class="counter-title">Happy clients</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Column -->
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+						<div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+							<div class="content">
+								<div class="count-outer count-box">
+									<span class="count-text" data-speed="3500" data-stop="14">0</span>
+								</div>
+								<div class="counter-title">Best Trainers</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<!-- End Counter Section -->
+	
+	<!-- Pricing Section -->
+	<section class="pricing-section" style="background-image: url(static/images/background/1.jpg)">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>Program</span> Pricing</h2>
+			</div>
+			<div class="row clearfix">
+				
+				<!-- Pricing Block -->
+				<div class="price-block col-lg-4 col-md-4 col-sm-12">
+					<div class="side-text">STANDART</div>
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="icon-box">
+							<span class="icon"><img src="{% static 'images/icons/price-1-icon.svg' %}" alt="" /></span>
+						</div>
+						<ul class="price-list">
+							<li class="hide">Membership Card</li>
+							<li>Health and Fitness Tips</li>
+							<li>Personal Health Solution</li>
+							<li>Diet Plan Included</li>
+							<li class="hide">6 Days a Week</li>
+							<li class="hide">Zumba Classes</li>
+						</ul>
+						<div class="price">Tk. 4000<span>Per Month</span></div>
+						{% if user.is_authenticated %}
+							<a href="subscription">
+								<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+							</a>
+						{% else %}
+							<a href="accounts/register">
+								<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+							</a>
+						{% endif %}
+					</div>
+				</div>
+				
+				<!-- Pricing Block -->
+				<div class="price-block col-lg-4 col-md-4 col-sm-12">
+					<div class="side-text">PROFESSIONAL</div>
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="icon-box">
+							<span class="icon"><img src="{% static 'images/icons/price-2-icon.svg' %}" alt="" /></span>
+						</div>
+						<ul class="price-list">
+							<li>Membership Card</li>
+							<li>Health and Fitness Tips</li>
+							<li>Personal Health Solution</li>
+							<li>Diet Plan Included</li>
+							<li class="hide">6 Days a Week</li>
+							<li class="hide">Zumba Classes</li>
+						</ul>
+						<div class="price">Tk. 6000<span>Per Month</span></div>
+						{% if user.is_authenticated %}
+						<a href="subscription">
+							<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+						</a>
+						{% else %}
+						<a href="accounts/register">
+							<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+				
+				<!-- Pricing Block -->
+				<div class="price-block col-lg-4 col-md-4 col-sm-12">
+					<div class="side-text">ULTIMATE</div>
+					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="icon-box">
+							<span class="icon"><img src="{% static 'images/icons/price-3-icon.svg' %}" alt="" /></span>
+						</div>
+						<ul class="price-list">
+							<li>Membership Card</li>
+							<li>Health and Fitness Tips</li>
+							<li>Personal Health Solution</li>
+							<li>Diet Plan Included</li>
+							<li>6 Days a Week</li>
+							<li>Zumba Classes</li>
+						</ul>
+						<div class="price">Tk 8000<span>Per Month</span></div>
+						{% if user.is_authenticated %}
+						<a href="subscription">
+							<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+						</a>
+						{% else %}
+						<a href="accounts/register">
+							<div class="theme-btn btn-style-one purchase-box-btn"><span class="txt">PURCHASE NOW</span></div>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End Pricing Section -->
+	
+	<!-- Coaches Section -->
+	<section class="coaches-section">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>Our</span> Trainers</h2>
+				<div class="text">Professional trainers are here just for you to make your dream fitness turn into reality. <br> They will be your guide to this journey.</div>
+			</div>
+		</div>
+		
+		<div class="four-item-carousel owl-carousel owl-theme">
+
+			{% for coach in coachs %}
+			<!-- Coach Block -->
+			<div class="coach-block">
+				<div class="inner-box">
+					<div class="image">
+						<img src="{{coach.image.url}}" alt="" />
+						<!-- Overlay Box -->
+						<div class="overlay-box">
+							<a href="trainer.html" class="overlay-link"></a>
+							<div class="overlay-inner">
+								<div class="content">
+									<h4><a href="blog-detail.html">{{coach.name}}</a></h4>
+								</div>
+							</div>
+						</div>
+						<!-- Overlay Box Two -->
+						<div class="overlay-box-two">
+							<a href="trainer.html" class="overlay-link-two"></a>
+							<div class="content">
+								<h5><a href="blog-detail.html">{{coach.fullname}}</a></h5>
+								<div class="text">{{coach.bio}}</div>
+								<!-- Social Box -->
+								<div class="social-box">
+									<a href="#" class="fa fa-facebook"></a>
+									<a href="#" class="fa fa-twitter"></a>
+									<a href="#" class="fa fa-instagram"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+			
+			
+			
+	</section>
+	<!-- End Coaches Section -->
+	
+	<!-- Calculator Section -->
+	<section class="calculator-section">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>bmi</span> CALCULATOR</h2>
+				<div class="text">Calculate your BMI and know your current state of fitness. <br> BMI less than 18.5? Well you need to gain weight. BMI more than 24.9? Well you neeed to lose weight. </div>
+			</div>
+			
+			<div class="inner-container">
+				
+				<!-- Default Form -->
+				<div class="default-form">
+					
+					<!-- Default Form -->
+					<form method="post" action="contact.html">
+						<div class="row clearfix">
+						
+							<div class="col-lg-4 col-md-6 col-sm-12 form-group">
+								<input type="text" name="cm" placeholder="Height / Cm" required>
+							</div>
+							
+							<div class="col-lg-4 col-md-6 col-sm-12 form-group">
+								<input type="text" name="weight" placeholder="Weight / kg" required>
+							</div>
+							
+							<div class="col-lg-4 col-md-6 col-sm-12 form-group">
+								<input type="text" name="age" placeholder="Age" required>
+							</div>
+							
+							<div class="form-group col-lg-4 col-md-6 col-sm-12">
+								<select class="custom-select-box">
+									<option>Gender</option>
+									<option>Male</option>
+									<option>Female</option>
+								</select>
+							</div>
+							
+							<div class="form-group col-lg-4 col-md-6 col-sm-12">
+								<select class="custom-select-box">
+									<option>Select an activity factor</option>
+									<option>Factor 01</option>
+									<option>Factor 02</option>
+								</select>
+							</div>
+							
+							<div class="form-group col-lg-4 col-md-6 col-sm-12">
+								<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">CALCULATE</span></button>
+							</div>
+							
+						</div>
+					</form>
+					
+					<!--End Default Form -->
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	<!-- End Calculator Section -->
+	
+	<!-- Testimonial Section Two -->
+	<section class="testimonial-section-two">
+		<div class="auto-container">
+			<div class="sec-title centered">
+				<h2><span>WHAT OUR</span><br>CLIENTS SAY</h2>
+				<div class="text">Don't trust our words? <br> Hear the story of some of our dedicated clients.</div>
+			</div>
+			
+			<div class="testimonial-outer">
+				
+				
+				<!--Product Thumbs Carousel-->
+                <div class="client-thumb-outer">
+                    <div class="client-thumbs-carousel owl-carousel owl-theme">
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="{% static 'images/resource/author-1.jpg' %}" alt=""></figure>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="images/resource/author-2.jpg" alt=""></figure>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt=""></figure>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="images/resource/author-4.jpg" alt=""></figure>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="images/resource/author-5.jpg" alt=""></figure>
+                        </div>
+                        <div class="thumb-item">
+                            <figure class="thumb-box"><img src="images/resource/author-6.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+				
+            	<!-- Client Testimonial Carousel -->
+                <div class="client-testimonial-carousel owl-carousel owl-theme">
+                
+                    <!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Nayan Hasan</div>
+								<div class="designation">CEO of Xbox</div>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Samantha Green</div>
+								<div class="designation">CEO of Company</div>
+							</div>
+                        </div>
+                    </div>
+					
+					<!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Samantha Green</div>
+								<div class="designation">CEO of Company</div>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Samantha Green</div>
+								<div class="designation">CEO of Company</div>
+							</div>
+                        </div>
+                    </div>
+					
+					<!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Samantha Green</div>
+								<div class="designation">CEO of Company</div>
+							</div>
+                        </div>
+                    </div>
+					
+					<!--Testimonial Block -->
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+							<span class="quote-left flaticon-quote-3"></span>
+							<span class="quote-right flaticon-quote-4"></span>
+							<div class="text">“Wasabee fit’s 90 day challenge put me back in the gym on a consistent basis. I eat clean and listen to the advice of coach on every workout”</div>
+							<div class="author-info">
+								<div class="author-name">Samantha Green</div>
+								<div class="designation">CEO of Company</div>
+							</div>
+                        </div>
+                    </div>
+                    
+                </div>
+				
+            </div>
+			
+		</div>
+	</section>
+	<!-- End Testimonial Section -->
+	
+	<!-- Main Footer -->
+    <footer class="main-footer" style="background-image:url(static/images/background/2.jpg)">
+		<div class="auto-container">
+        	<!-- Widgets Section -->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+                	
+                    <!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget logo-widget">
+									<div class="logo">
+                                    	<a href="index.html"><img src="images/footer-logo.svg" alt="" /></a>
+                                    </div>
+									<!-- Footer Mobile Logo -->
+									<div class="footer-mobile-logo">
+										<a href="index.html"><img src="images/logo.svg" alt="" title=""></a>
+									</div>
+									<ul class="info-list">
+										<li><span>Address:</span>23 Mirpur Road, Dhaka</li>
+										<li><span>Phones:</span>
+										<a href="tel:+8801732131024">+8801732131024</a><br>
+										<a href="tel:+8801956902409">+8801956902409</a>
+										</li>
+										<li><span>Working Hours:</span>Monday-Sunday: 07:00 - 22:00</li>
+										<li><span>Email:</span><a href="mailto:info@bigbear.com">info@bigbear.com</a></li>
+										<li class="social-links"><span>Our Socials:</span>
+											<a href="#" class="fa fa-facebook"></a>
+											<a href="#" class="fa fa-twitter"></a>
+											<a href="#" class="fa fa-instagram"></a>
+											<a href="#" class="fa fa-linkedin"></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget news-widget">
+									<h6>BLOG POSTS</h6>
+									<div class="widget-content">
+										
+										<div class="post">
+											<div class="thumb"><a href="blog-detail.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a></div>
+											<h5><a href="blog-detail.html">HOW TO MAXIMISE TIME SPENT AT THE GYM</a></h5>
+											<span class="date">JUNE 21, 2020</span>
+										</div>
+
+										<div class="post">
+											<div class="thumb"><a href="blog-detail.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></div>
+											<h5><a href="blog-detail.html">10 TIPS HOW TO PREPARE MEALS FAST AND EASY</a></h5>
+											<span class="date">JUNE 21, 2020</span>
+										</div>
+										
+										<div class="post">
+											<div class="thumb"><a href="blog-detail.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></div>
+											<h5><a href="blog-detail.html">SIMPLE CONDITION FOR ALL AROUND FITNESS</a></h5>
+											<span class="date">JUNE 21, 2020</span>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!-- Big Column -->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+							
+							<!-- Footer Column -->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+									<h6>Instagram</h6>
+									<div class="widget-content">
+										
+										<div class="images-outer clearfix">
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/1.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-1.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/2.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-2.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/3.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-3.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/4.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-4.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/5.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-5.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/6.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-6.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/7.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-7.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/8.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-8.jpg" alt=""></a></figure>
+											<!--Image Box-->
+											<figure class="image-box"><a href="images/gallery/9.jpg" class="lightbox-image" data-fancybox="footer-gallery" title="Image Title Here" data-fancybox-group="footer-gallery"><img src="images/gallery/footer-gallery-thumb-9.jpg" alt=""></a></figure>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget newsletter-widget">
+									<h6>Newsletter</h6>
+									<div class="text">Wasabee Fit – fitness health center where your body gets its shape! Start training now to stay fit and healthy all year round!</div>
+									<!-- Newsletter Form -->
+									<div class="newsletter-form">
+										<form method="post" action="contact.html">
+											<div class="form-group">
+												<input type="email" name="email" value="" placeholder="Email" required="">
+												<button type="submit" class="theme-btn submit-btn"><span><img src="images/icons/message-icon.png" alt="" /></span></button>
+											</div>
+										</form>
+									</div>
+									
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="copyright">DESIGN BY WASABEE</div>
+			</div>
+		
+		</div>
+	</footer>
+	
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+<!-- Purchase Popup -->
+<div id="purchase-popup" class="purchase-popup">
+	<div class="close-search theme-btn"><span>Close</span></div>
+	<div class="popup-inner">
+		<div class="overlay-layer"></div>
+		
+    	<div class="purchase-form">
+			<div class="sec-title centered">
+				<h2><span>GET FREE</span> CONSULTATION</h2>
+				<div class="text">If you need of a Personal Trainer, Fitness Instructor advice, or a healthy <br> living product review, please feel free to contact us</div>
+			</div>
+        	
+			<!-- Default Form -->
+			<form method="post" action="contact.html">
+				<div class="row clearfix">
+				
+					<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+						<input type="text" name="name" placeholder="Name" required>
+					</div>
+					
+					<div class="col-lg-6 col-md-6 col-sm-12 form-group">
+						<input type="email" name="email" placeholder="Email" required>
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+						<input type="text" name="subject" placeholder="Subject" required>
+					</div>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+						<textarea class="darma" name="message" placeholder="Your Message"></textarea>
+					</div>
+					
+					<div class="form-group text-center col-lg-12 col-md-12 col-sm-12">
+						<span class="data">* Personal data will be encrypted</span>
+						<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">SEND MESSAGE</span></button>
+					</div>
+					
+				</div>
+			</form>
+			
+            
+        </div>
+        
+    </div>
+</div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cart.js' %}"</script>
+
+
+</body>
+</html>
